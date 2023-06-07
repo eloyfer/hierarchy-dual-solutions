@@ -1,6 +1,7 @@
 
 import os
 import json
+import fire
 import numpy as np
 from ll_integer_lp import solve_ilp
 
@@ -58,3 +59,5 @@ def run_single_experiment(n,d,ell,m,out_dir):
   
   
   
+if __name__ == '__main__':
+  fire.Fire()
