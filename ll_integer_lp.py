@@ -1,3 +1,5 @@
+import numpy as np
+
 
 try:
   import gurobipy as gp
