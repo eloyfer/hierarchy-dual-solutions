@@ -2,6 +2,7 @@
 import os
 import json
 import fire
+from tqdm import tqdm
 import numpy as np
 from ll_integer_lp import solve_ilp
 
