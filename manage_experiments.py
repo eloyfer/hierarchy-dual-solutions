@@ -41,13 +41,13 @@ def solution_to_support(sol_vec, K_mat, config_set):
   support_size = K_mat[support_idx,0].sum()
   return support,support_size
 
-def solution_to_json(n,d,ell,m,support,support_size):
+def solution_to_json(n,d,ell,m,support,support_size,linear=True):
   sol_value = support_size**(1./ell)
   result = {
     'n': int(n), 'd': int(d), 'ell': int(ell),'m': int(m), 'support':[list(map(int,x)) for x in support],
     'support_size': float(support_size),
     'sol_value': float(sol_value),
-    'linear': True
+    'linear': linear
   }
   return json.dumps(result, sort_keys=True, indent=4)
   
@@ -80,8 +80,7 @@ def run_single_experiment_nonlinear(n,d,ell,m,out_dir):
   K_mat = get_krawtchouk_matrix(n,ell)
   sol = solve_ilp(n,ell,d,m,K_mat,config_set)
   support,support_size = solution_to_support(sol, K_mat, config_set)
-  sol_json = solution_to_json(n,d,ell,m,support,support_size)
-  sol_json['linear'] = False
+  sol_json = solution_to_json(n,d,ell,m,support,support_size,linear=False)
   print(sol_json)
   save_result(n,d,ell,m,sol_json,out_dir)
 
@@ -93,8 +92,7 @@ def run_multiple_experiments_nonlinear(n,ell,m,out_dir):
     sol = solve_ilp(n,ell,d,m,K_mat,config_set)
     support,support_size = solution_to_support(sol, K_mat, config_set)
     print('d =',d)
-    sol_json = solution_to_json(n,d,ell,m,support,support_size)
-    sol_json['linear'] = False
+    sol_json = solution_to_json(n,d,ell,m,support,support_size,linear=False)
     print(sol_json)
     save_result(n,d,ell,m,sol_json,out_dir)
 
