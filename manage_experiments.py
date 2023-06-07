@@ -9,7 +9,7 @@ try:
   from create_krawchouk import get_krawchouk_column, index_set_generator, get_krawchouk_recurrence_coeffs
   from create_phi import get_L1_lin_matrix, get_coefficients_lin, get_index_set
   from fast_walsh_hadamard_transform import fwht
- except ModuleNotFoundError:
+except ModuleNotFoundError:
   import sys
   sys.path.append('/cs/labs/nati/eloyfer/projects/multivariate-krawchouks/')
   from create_krawchouk import get_krawchouk_column, index_set_generator, get_krawchouk_recurrence_coeffs
