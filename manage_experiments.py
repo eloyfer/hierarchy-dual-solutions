@@ -44,9 +44,9 @@ def solution_to_support(sol_vec, K_mat, config_set):
 def solution_to_json(n,d,ell,m,support,support_size):
   sol_value = support_size**(1./ell)
   result = {
-    'n': n, 'd':d, 'ell':ell,'m':m,'support':[list(x) for x in support],
-    'support_size': support_size,
-    'sol_value': sol_value
+    'n': int(n), 'd': int(d), 'ell': int(ell),'m': int(m), 'support':[list(map(int,x)) for x in support],
+    'support_size': float(support_size),
+    'sol_value': float(sol_value)
   }
   return json.dumps(result, sort_keys=True, indent=4)
   
