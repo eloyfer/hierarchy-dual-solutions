@@ -4,7 +4,7 @@ import json
 import fire
 from tqdm import tqdm
 import numpy as np
-from ll_integer_lp import solve_ilp
+from ll_integer_lp import solve_ilp, solve_ilp_nonlinear
 
 try:
   from create_krawchouk import get_krawchouk_column, index_set_generator, get_krawchouk_recurrence_coeffs
@@ -46,7 +46,8 @@ def solution_to_json(n,d,ell,m,support,support_size):
   result = {
     'n': int(n), 'd': int(d), 'ell': int(ell),'m': int(m), 'support':[list(map(int,x)) for x in support],
     'support_size': float(support_size),
-    'sol_value': float(sol_value)
+    'sol_value': float(sol_value),
+    'linear': True
   }
   return json.dumps(result, sort_keys=True, indent=4)
   
@@ -70,6 +71,30 @@ def run_multiple_experiments(n,ell,m,out_dir):
     support,support_size = solution_to_support(sol, K_mat, config_set)
     print('d =',d)
     sol_json = solution_to_json(n,d,ell,m,support,support_size)
+    print(sol_json)
+    save_result(n,d,ell,m,sol_json,out_dir)
+
+def run_single_experiment_nonlinear(n,d,ell,m,out_dir):
+  
+  config_set = get_index_set(n,1<<ell)
+  K_mat = get_krawtchouk_matrix(n,ell)
+  sol = solve_ilp(n,ell,d,m,K_mat,config_set)
+  support,support_size = solution_to_support(sol, K_mat, config_set)
+  sol_json = solution_to_json(n,d,ell,m,support,support_size)
+  sol_json['linear'] = False
+  print(sol_json)
+  save_result(n,d,ell,m,sol_json,out_dir)
+
+def run_multiple_experiments_nonlinear(n,ell,m,out_dir):
+  
+  config_set = get_index_set(n,1<<ell)
+  K_mat = get_krawtchouk_matrix(n,ell)
+  for d in range(n//2 - (n//2)%2,3,-2):
+    sol = solve_ilp(n,ell,d,m,K_mat,config_set)
+    support,support_size = solution_to_support(sol, K_mat, config_set)
+    print('d =',d)
+    sol_json = solution_to_json(n,d,ell,m,support,support_size)
+    sol_json['linear'] = False
     print(sol_json)
     save_result(n,d,ell,m,sol_json,out_dir)
 
