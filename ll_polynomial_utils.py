@@ -21,12 +21,14 @@ def get_Phi(n,ell,d,m,K_mat,config_set):
     K_mat = K_mat.astype(np.float32)
     phi_parts = [((K_mat[U_indices[v]]+d)**m).sum(axis=0) - 2**(ell-1)*(n-d)**m for v in V]
     Phi = np.prod(phi_parts, axis=0)
+    assert check_valid_regions(func,n,d,ell,config_set,K_mat)
     return Phi
+
+# def get_Phi_nonlinear(n,ell,d,m,K_mat,config_set):
 
 def get_config_weights(config):
     n = sum(config)
     return (n - fwht(config))/2
-
 
 def get_valid_regions(n,d,ell,config_set,K_mat):
     """
