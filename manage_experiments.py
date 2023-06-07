@@ -65,9 +65,9 @@ def run_multiple_experiments(n,ell,m,out_dir):
   
   config_set = get_index_set(n,1<<ell)
   K_mat = get_krawtchouk_matrix(n,ell)
-  sol = solve_ilp(n,ell,d,m,K_mat,config_set)
-  support,support_size = solution_to_support(sol, K_mat, config_set)
   for d in range(n//2 - (n//2)%2,3,-2):
+    sol = solve_ilp(n,ell,d,m,K_mat,config_set)
+    support,support_size = solution_to_support(sol, K_mat, config_set)
     print('d =',d)
     sol_json = solution_to_json(n,d,ell,m,support,support_size)
     print(sol_json)
