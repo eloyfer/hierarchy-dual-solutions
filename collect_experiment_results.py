@@ -15,3 +15,7 @@ def collect_results(outdir):
     results.append([res[key] for key in required_keys])
   dat = pd.DataFrame(results, columns=required_keys)
   dat.to_csv(os.path.join(outdir, 'collected_results.csv'), index=False)
+
+  
+if __name__ == '__main__':
+  fire.Fire(collect_results)
