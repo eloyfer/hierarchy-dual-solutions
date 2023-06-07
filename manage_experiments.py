@@ -30,8 +30,9 @@ def get_krawtchouk_matrix(n,ell):
     K = np.array(K).T
     return K
 
-def save_result(n,d,ell,m,sol_json,out_dir):
-  filename = f'result_n{n}_d{d}_ell{ell}_m{m}.json'
+def save_result(n,d,ell,m,sol_json,out_dir,linear=True):
+  linear_tag = '' if linear else '_nonlinear'
+  filename = f'result_n{n}_d{d}_ell{ell}_m{m}{linear_tag}.json'
   with open(os.path.join(out_dir, filename), 'w') as fid:
     fid.write(sol_json)
 
