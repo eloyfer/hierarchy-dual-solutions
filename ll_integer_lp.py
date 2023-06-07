@@ -22,7 +22,7 @@ def solve_ilp(n,ell,d,m,K_mat,config_set):
   model = gp.Model()
   x = model.addMVar(len(config_set), vtype=gp.GRB.BINARY)
   model.setObjective(K_mat[:,0] @ x , gp.GRB.MINIMIZE)
-  model.addConstr(K[0] @ x >= 1, "c0")
+  model.addConstr(K_mat[0] @ x >= 1, "c0")
   model.addConstr(M @ x >= 0)
   model.optimize()
   return model.x
