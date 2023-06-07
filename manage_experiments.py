@@ -31,7 +31,7 @@ def get_krawtchouk_matrix(n,ell):
     return K
 
 def save_result(n,d,ell,m,sol_json,out_dir):
-  filename = 'result_n{n}_d{d}_ell{ell}_m{m}.json'
+  filename = f'result_n{n}_d{d}_ell{ell}_m{m}.json'
   with open(os.path.join(out_dir, filename), 'w') as fid:
     fid.write(sol_json)
 
