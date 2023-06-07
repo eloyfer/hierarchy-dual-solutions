@@ -36,7 +36,7 @@ def save_result(n,d,ell,m,sol_json,out_dir):
     fid.write(sol_json)
 
 def solution_to_support(sol_vec, K_mat, config_set):
-  support_idx = np.nonzero(np.round(sol_vec))
+  support_idx = np.nonzero(np.round(sol_vec))[0]
   support = [config_set[i] for i in support_idx]
   support_size = K_mat[support_idx,0].sum()
   return support,support_size
