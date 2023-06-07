@@ -83,7 +83,7 @@ def run_single_experiment_nonlinear(n,d,ell,m,out_dir):
   support,support_size = solution_to_support(sol, K_mat, config_set)
   sol_json = solution_to_json(n,d,ell,m,support,support_size,linear=False)
   print(sol_json)
-  save_result(n,d,ell,m,sol_json,out_dir)
+  save_result(n,d,ell,m,sol_json,out_dir,linear=True)
 
 def run_multiple_experiments_nonlinear(n,ell,m,out_dir):
   
@@ -95,7 +95,7 @@ def run_multiple_experiments_nonlinear(n,ell,m,out_dir):
     print('d =',d)
     sol_json = solution_to_json(n,d,ell,m,support,support_size,linear=False)
     print(sol_json)
-    save_result(n,d,ell,m,sol_json,out_dir)
+    save_result(n,d,ell,m,sol_json,out_dir,linear=True)
 
   
   
