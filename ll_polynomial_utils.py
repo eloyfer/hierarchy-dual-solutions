@@ -24,6 +24,11 @@ def get_Phi(n,ell,d,m,K_mat,config_set):
     assert check_valid_regions(Phi,n,d,ell,config_set,K_mat)
     return Phi
 
+def get_Phi_hat_conv(n,ell,d,m,K_mat,config_set):
+    Phi = get_Phi(n,ell,d,m,K_mat,config_set)
+    M = (K_mat.T @ np.diag(Phi) @ K_mat.T) / 2.**(n*ell)
+    return M
+
 def get_Phi_nonlinear(n,ell,d,m,K_mat,config_set):
     """
     Return the function $\Phi = \prod_{v\neq 0} (\sum_{<u,v>=1} K_u^m - (n-2d)^m )$
@@ -43,6 +48,11 @@ def get_Phi_nonlinear(n,ell,d,m,K_mat,config_set):
     assert check_valid_regions_nonlinear(Phi,n,d,ell,config_set,K_mat)
 #     assert not check_valid_regions(Phi,n,d,ell,config_set,K_mat)
     return Phi
+
+def get_Phi_nonlinear_hat_conv(n,ell,d,m,K_mat,config_set):
+    Phi = get_Phi_nonlinear(n,ell,d,m,K_mat,config_set)
+    M = (K_mat.T @ np.diag(Phi) @ K_mat.T) / 2.**(n*ell)
+    return M
 
 def get_config_weights(config):
     n = sum(config)
