@@ -76,7 +76,7 @@ def generate_walk_conditions(U,ell):
   """
   U = Counter(U)
   dat = pd.DataFrame(
-    data=np.zeros([len(U)+2**ell-1, len(U) * 2**ell + 2**ell]),
+    data=np.zeros([len(U)+2**ell-1, len(U) * 2**ell + 2**ell], dtype=np.int32),
     columns=[uv_label(u,v) for u in U for v in range(2**ell)] + ['m'] + [delta_label(v) for v in range(1,2**ell)]
   )
   row = 0
