@@ -39,6 +39,7 @@ class LevelSol:
         # divide by 2^(ell*n)
         norm_fac = 2**(self.lvl * self.n)
 #         assert all(x % norm_fac == 0 for x in func_fourier)
+#         func_fourier = [x // norm_fac for x in func_fourier]
         func_fourier = [Fraction(x, norm_fac) for x in func_fourier]
         self.raw_sol_fourier = func_fourier
         
@@ -54,13 +55,26 @@ class LevelSol:
     
     def get_gamma_squared(self):
         K_rows = [self.kraw.get_row(a) for a in self.configs]
-        gamma_sqr = [Fraction(sum(col), len(col))**2 for col in zip(*K_rows)]
+        gamma_sqr = [(sum(col), len(col)) for col in zip(*K_rows)]
+        assert all(x % y == 0 for x,y in gamma_sqr)
+        gamma_sqr = [(x//y)**2 for x,y in gamma_sqr]
+#         gamma_sqr = [Fraction(sum(col), len(col))**2 for col in zip(*K_rows)]
         
         # symmetrize
+        
         gamma_sqr_on_robit = {
-            a0: Fraction(sum(gamma_sqr[self.kraw.config2index(a)] for a in orbit), len(orbit))
+            a0: (sum(gamma_sqr[self.kraw.config2index(a)] for a in orbit), len(orbit))
             for a0, orbit in self.kraw.orbit_map.items()
         }
+        assert all(x % y == 0 for x,y in gamma_sqr_on_robit.values())
+        gamma_sqr_on_robit = {
+            a0: x//y for a0, (x,y) in gamma_sqr_on_robit.items()
+        }
+        
+#         gamma_sqr_on_robit = {
+#             a0: Fraction(sum(gamma_sqr[self.kraw.config2index(a)] for a in orbit), len(orbit))
+#             for a0, orbit in self.kraw.orbit_map.items()
+#         }
         
         gamma_sqr = [
             gamma_sqr_on_robit[self.kraw.config_to_orbit[a]] 

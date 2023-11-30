@@ -1,5 +1,7 @@
 
 from collections import defaultdict
+from itertools import product
+import pandas as pd
 
 from solution_factory2 import SolutionFactory2
 from total_sol import TotalSol
@@ -16,34 +18,30 @@ class DualSolExperiment:
         self.sol_factory = SolutionFactory2(n,d)
         
         self.init_level_solutions()
-        self.print_num_feasible()
+        print(self.report_num_feasible())
         self.init_final_sols()
-        self.print_best_sols()
+        print(self.report_best_sols())
         
     def init_level_solutions(self):
         self.lvl_sols = {}
         for lvl in range(1, self.ell+1):
             self.lvl_sols[lvl] = []
-            for m in self.m_vals:
+            for m in self.m_vals[lvl]:
+#                 print('m=',m)
                 self.lvl_sols[lvl] += self.sol_factory.get_all_level_sols(lvl, m)
     
     def report_num_feasible(self):
-        num_feasible = {
-            lvl: {m: 0 for m in self.m_vals[lvl]}
-            for lvl in range(1, self.ell+1)
-        }
+        dat = pd.DataFrame(
+            index=[(lvl,m) for lvl in range(1,self.ell+1) for m in self.m_vals[lvl]],
+            columns=['total', 'feasible']
+        )
+        dat['total'] = 0
+        dat['feasible'] = 0
         for lvl in range(1, self.ell+1):
             for sol in self.lvl_sols[lvl]:
-                num_feasible[lvl][sol.m] += int(sol.is_feasible())
-        return num_feasible
-    
-    def print_num_feasible(self):
-        print('num feasible:')
-        num_feasible = self.report_num_feasible()
-        for lvl in sorted(num_feasible):
-            print(f'level {lvl}')
-            for m in sorted(num_feasible[lvl]):
-                print(f'\tm={m}: {num_feasible[lvl][m]}/{len([sol for sol in self.lvl_sols[lvl] if sol.m == m])}')
+                dat.at[(lvl,sol.m), 'total'] += 1
+                dat.at[(lvl,sol.m), 'feasible'] += int(sol.is_feasible())
+        return dat
     
     def init_final_sols(self):
         
@@ -65,21 +63,19 @@ class DualSolExperiment:
 #         print('min value:', self.min_value)
     
     def report_best_sols(self):
-        best_sols = {
-            lvl: {m: 2**(self.n*lvl) for m in m_vals[lvl]} 
-            for lvl in range(1,self.ell+1)
+        index_col = [
+            tuple(ms) for ms in product(*[self.m_vals[lvl] for lvl in range(1,self.ell+1)])
+        ]
+        data = {
+            'value': [2.**(self.n)] * len(index_col),
+            'config': None
         }
+        dat = pd.DataFrame(data, index=index_col)
         for sol in self.final_sols:
-            best_sols[sol.lvl][sol.m] = min(
-                best_sols[sol.lvl][sol.m],
-                float(sol.compute_value())**(1./sol.lvl)
-            )
-        return best_sols
+            key = tuple(sol.lvl_sols[lvl].m for lvl in range(1,sol.max_lvl+1))
+            value = float(sol.compute_value())**(1./sol.max_lvl)
+            if value < dat.at[key,'value']:
+                dat.at[key,'value'] = value
+                dat.at[key,'config'] = tuple(sol.lvl_sols[lvl].configs for lvl in range(1,sol.max_lvl+1))
+        return dat
     
-    def print_best_sols(self):
-        print('best solutions:')
-        best_sols = self.report_best_sols()
-        for lvl in sorted(best_sols):
-            print(f'level {lvl}')
-            for m in sorted(best_sols[lvl]):
-                print(f'\tm={m}: {best_sols[lvl]}')

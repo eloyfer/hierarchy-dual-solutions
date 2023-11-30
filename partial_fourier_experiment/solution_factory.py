@@ -1,5 +1,5 @@
 
-
+from tqdm import tqdm
 from level_sol import LevelSol
 
 class SolutionFactory:
@@ -14,8 +14,8 @@ class SolutionFactory:
         self.m = m
         self.kraw = kraw
         
-        self.phi = self.compute_phi()
         self.valid_region = self.compute_valid_region()
+        self.phi = self.compute_phi()
     
     def compute_phi(self):
         K = self.kraw
@@ -72,7 +72,15 @@ class SolutionFactory:
         return sol
     
     def get_all_level_sols(self):
+        print(f'{self} creating all sols')
         K = self.kraw
-        singles = [self.get_sol([config]) for config in K.get_orbit_list()]
-        orbits = [self.get_sol(K.orbit_map[config]) for config in K.get_orbit_list()]
+        singles = [
+            self.get_sol([config]) 
+            for config in tqdm(K.get_orbit_list(), desc='singles')]
+        orbits = [
+            self.get_sol(K.orbit_map[config]) 
+            for config in tqdm(K.get_orbit_list(), desc='orbits')]
         return singles + orbits
+    
+    def __repr__(self):
+        return f'SolutionFactory(n={self.n}, d={self.d}, lvl={self.lvl}, m={self.m})'

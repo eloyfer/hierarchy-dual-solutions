@@ -24,5 +24,4 @@ class SolutionFactory2:
         return self.factories[key]
     
     def get_all_level_sols(self, lvl, m):
-        key = (lvl,m)
-        return self.factories[key].get_all_level_sols()
+        return self.get_factory(lvl,m).get_all_level_sols()
