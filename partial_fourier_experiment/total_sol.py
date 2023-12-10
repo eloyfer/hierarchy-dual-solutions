@@ -27,6 +27,13 @@ class TotalSol:
         
         self.lvl_sols[lvl] = lvl_sol
         self.lambdas[lvl] = self.compute_lambda(lvl)
+
+    @staticmethod
+    def count_subspaces(dim1, dim2, dim3):
+        """
+        Count subspaces j
+        """
+        pass
     
     def compute_lambda(self, lvl):
         assert lvl in self.lvl_sols
@@ -46,18 +53,20 @@ class TotalSol:
                 return x*y
             
             values = {}
+            lvl_coeffs = {
+                j: Fraction(
+                    functools.reduce(prod, [2**(lvl+i) - 1 for i in range(1,j-lvl+1)]),
+                    functools.reduce(prod, [2**i - 1 for i in range(1,j-lvl+1)])
+                )
+                for j in range(lvl+1,self.max_lvl+1)
+            }
             for config in valid_region:
                 cur_val = 0
                 for j in range(lvl+1,self.max_lvl+1):
                     config_j = config + (0,) * (2**j - 2**lvl)
                     index_j = config_sets[j].index(config_j)
                     func_val = self.lvl_sols[j].sol[index_j]
-                    coeff = functools.reduce(prod, [2**(lvl+i) - 1 for i in range(1,j-lvl+1)])
-                    denom = functools.reduce(prod, [2**i - 1 for i in range(1,j-lvl+1)])
-                    cur_val += Fraction(
-                        coeff * self.lambdas[j] * func_val,
-                        denom
-                    )
+                    cur_val += lvl_coeffs[j] * self.lambdas[j] * func_val
                 coeff = functools.reduce(prod, [2**(lvl+i) - 1 for i in range(1,self.max_lvl-lvl+1)])
                 denom = functools.reduce(prod, [2**i - 1 for i in range(1,self.max_lvl-lvl+1)])
                 cur_val += Fraction(coeff, denom)
@@ -71,3 +80,6 @@ class TotalSol:
     
     def compute_value(self):
         return 1 + sum(self.lambdas[j] * self.lvl_sols[j].sol[0] for j in self.lambdas.keys())
+
+    def __repr__(self):
+        return 'TotalSol(' + ','.join([repr(self.lvl_sols[lvl]) for lvl in range(1,self.max_lvl+1)]) + ')'

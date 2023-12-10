@@ -94,4 +94,4 @@ class LevelSol:
         return fourier_feasible and valid_region_feasible and non_zero_fourier_at_0
     
     def __repr__(self):
-        return f'LevelSol(n={self.n},lvl={self.level},d={self.d},m={self.m},configs={self.configs})'
+        return f'LevelSol(n={self.n},lvl={self.lvl},d={self.d},m={self.m},configs={self.configs})'

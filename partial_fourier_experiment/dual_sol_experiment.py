@@ -9,11 +9,12 @@ from total_sol import TotalSol
 
 class DualSolExperiment:
     
-    def __init__(self, n, d, ell, m_vals):
-        assert set(range(1,ell+1)) <= set(m_vals.keys())
+    def __init__(self, n, d, m_vals):
+        assert len(m_vals) == max(m_vals)
+        assert min(m_vals) == 1
         self.n = n
         self.d = d
-        self.ell = ell
+        self.ell = max(m_vals)
         self.m_vals = m_vals
         self.sol_factory = SolutionFactory2(n,d)
         
@@ -44,7 +45,6 @@ class DualSolExperiment:
         return dat
     
     def init_final_sols(self):
-        
         self.final_sols = []
         for max_lvl in range(1, self.ell+1):
             sols = [TotalSol(self.n, max_lvl)]
@@ -59,13 +59,12 @@ class DualSolExperiment:
                 sols = sols_new
             self.final_sols += sols
         
-#         self.min_value = min([float(sol.compute_value())**(1./self.ell) for sol in self.final_sols])
-#         print('min value:', self.min_value)
-    
     def report_best_sols(self):
-        index_col = [
-            tuple(ms) for ms in product(*[self.m_vals[lvl] for lvl in range(1,self.ell+1)])
-        ]
+        index_col = []
+        for max_lvl in range(1,self.ell+1):
+            index_col += [
+                tuple(ms) for ms in product(*[self.m_vals[lvl] for lvl in range(1,max_lvl+1)])
+            ]
         data = {
             'value': [2.**(self.n)] * len(index_col),
             'config': None
@@ -76,6 +75,6 @@ class DualSolExperiment:
             value = float(sol.compute_value())**(1./sol.max_lvl)
             if value < dat.at[key,'value']:
                 dat.at[key,'value'] = value
-                dat.at[key,'config'] = tuple(sol.lvl_sols[lvl].configs for lvl in range(1,sol.max_lvl+1))
+                dat.at[key,'config'] = repr(sol) # tuple(sol.lvl_sols[lvl].configs for lvl in range(1,sol.max_lvl+1))
         return dat
     
