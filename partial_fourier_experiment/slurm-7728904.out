@@ -1,0 +1,36 @@
+[W 12:13:24.663 NotebookApp] Error loading server extension jupyter_lsp
+    Traceback (most recent call last):
+      File "/cs/labs/nati/eloyfer/envs/py39/lib/python3.9/site-packages/notebook/notebookapp.py", line 2029, in init_server_extensions
+        func(self)
+      File "/cs/labs/nati/eloyfer/envs/py39/lib/python3.9/site-packages/jupyter_lsp/serverextension.py", line 76, in load_jupyter_server_extension
+        nbapp.io_loop.call_later(0, initialize, nbapp, virtual_documents_uri)
+    AttributeError: 'NotebookApp' object has no attribute 'io_loop'
+[W 2023-12-10 12:13:29.161 LabApp] 'ip' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-12-10 12:13:29.161 LabApp] 'ip' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-12-10 12:13:29.161 LabApp] 'allow_origin' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-12-10 12:13:29.161 LabApp] 'allow_origin' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[I 2023-12-10 12:13:29.182 LabApp] JupyterLab extension loaded from /cs/labs/nati/eloyfer/envs/py39/lib/python3.9/site-packages/jupyterlab
+[I 2023-12-10 12:13:29.182 LabApp] JupyterLab application directory is /cs/labs/nati/eloyfer/envs/py39/share/jupyter/lab
+[I 2023-12-10 12:13:29.183 LabApp] Extension Manager is 'pypi'.
+[I 12:13:29.205 NotebookApp] Serving notebooks from local directory: /cs/labs/nati/eloyfer/projects/hierarchy-dual-solutions/partial_fourier_experiment
+[I 12:13:29.205 NotebookApp] Jupyter Notebook 6.5.2 is running at:
+[I 12:13:29.205 NotebookApp] http://sed-01:8888/?token=b56ab1590b2bc51373cfac13f0dcc95e91b94f22e463b035
+[I 12:13:29.205 NotebookApp]  or http://127.0.0.1:8888/?token=b56ab1590b2bc51373cfac13f0dcc95e91b94f22e463b035
+[I 12:13:29.205 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 12:13:29.213 NotebookApp] 
+    
+    To access the notebook, open this file in a browser:
+        file:///cs/usr/eloyfer/.local/share/jupyter/runtime/nbserver-968210-open.html
+    Or copy and paste one of these URLs:
+        http://sed-01:8888/?token=b56ab1590b2bc51373cfac13f0dcc95e91b94f22e463b035
+     or http://127.0.0.1:8888/?token=b56ab1590b2bc51373cfac13f0dcc95e91b94f22e463b035
+[W 12:13:38.092 NotebookApp] 404 GET /api/kernels/011ee011-abd5-4908-8028-c34d31fe1279/channels?session_id=5564ad5cf6ad4017a3778cc6fdc268f4 (132.65.128.99): Kernel does not exist: 011ee011-abd5-4908-8028-c34d31fe1279
+[W 12:13:38.547 NotebookApp] 404 GET /api/kernels/011ee011-abd5-4908-8028-c34d31fe1279/channels?session_id=5564ad5cf6ad4017a3778cc6fdc268f4 (132.65.128.99) 537.200000ms referer=None
+[W 12:14:11.110 NotebookApp] 404 GET /api/kernels/011ee011-abd5-4908-8028-c34d31fe1279/channels?session_id=5564ad5cf6ad4017a3778cc6fdc268f4 (132.65.128.99): Kernel does not exist: 011ee011-abd5-4908-8028-c34d31fe1279
+[W 12:14:11.181 NotebookApp] 404 GET /api/kernels/011ee011-abd5-4908-8028-c34d31fe1279/channels?session_id=5564ad5cf6ad4017a3778cc6fdc268f4 (132.65.128.99) 112.450000ms referer=None
+[W 12:15:15.467 NotebookApp] 404 GET /api/kernels/011ee011-abd5-4908-8028-c34d31fe1279/channels?session_id=5564ad5cf6ad4017a3778cc6fdc268f4 (132.65.128.99): Kernel does not exist: 011ee011-abd5-4908-8028-c34d31fe1279
+[W 12:15:15.536 NotebookApp] 404 GET /api/kernels/011ee011-abd5-4908-8028-c34d31fe1279/channels?session_id=5564ad5cf6ad4017a3778cc6fdc268f4 (132.65.128.99) 111.750000ms referer=None
+[W 12:16:40.256 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 12:16:41.530 NotebookApp] Kernel started: a4cf29fd-5672-4771-a5bf-7d70cba1284a, name: local-venv
+[W 12:16:52.761 NotebookApp] 404 GET /static/components/MathJax/fonts/HTML-CSS/TeX/otf/MathJax_AMS-Regular.otf (132.65.128.99) 80.620000ms referer=http://localhost:8081/notebooks/experiment_log.ipynb
+[W 12:16:52.812 NotebookApp] 404 GET /static/components/MathJax/fonts/HTML-CSS/TeX/otf/MathJax_Script-Regular.otf (132.65.128.99) 121.360000ms referer=http://localhost:8081/notebooks/experiment_log.ipynb

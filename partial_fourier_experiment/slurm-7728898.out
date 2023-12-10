@@ -1,0 +1,32 @@
+[W 07:28:32.511 NotebookApp] Error loading server extension jupyter_lsp
+    Traceback (most recent call last):
+      File "/cs/labs/nati/eloyfer/envs/py39/lib/python3.9/site-packages/notebook/notebookapp.py", line 2029, in init_server_extensions
+        func(self)
+      File "/cs/labs/nati/eloyfer/envs/py39/lib/python3.9/site-packages/jupyter_lsp/serverextension.py", line 76, in load_jupyter_server_extension
+        nbapp.io_loop.call_later(0, initialize, nbapp, virtual_documents_uri)
+    AttributeError: 'NotebookApp' object has no attribute 'io_loop'
+[W 2023-11-30 07:28:40.709 LabApp] 'ip' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-11-30 07:28:40.709 LabApp] 'ip' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-11-30 07:28:40.709 LabApp] 'allow_origin' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-11-30 07:28:40.709 LabApp] 'allow_origin' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[I 2023-11-30 07:28:40.794 LabApp] JupyterLab extension loaded from /cs/labs/nati/eloyfer/envs/py39/lib/python3.9/site-packages/jupyterlab
+[I 2023-11-30 07:28:40.794 LabApp] JupyterLab application directory is /cs/labs/nati/eloyfer/envs/py39/share/jupyter/lab
+[I 2023-11-30 07:28:40.798 LabApp] Extension Manager is 'pypi'.
+[I 07:28:40.881 NotebookApp] Serving notebooks from local directory: /cs/labs/nati/eloyfer/projects/hierarchy-dual-solutions/partial_fourier_experiment
+[I 07:28:40.881 NotebookApp] Jupyter Notebook 6.5.2 is running at:
+[I 07:28:40.881 NotebookApp] http://sed-01:8888/?token=3333f77b0002c59575030fb26c3ce939ea135cfb6286275f
+[I 07:28:40.881 NotebookApp]  or http://127.0.0.1:8888/?token=3333f77b0002c59575030fb26c3ce939ea135cfb6286275f
+[I 07:28:40.881 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 07:28:40.946 NotebookApp] 
+    
+    To access the notebook, open this file in a browser:
+        file:///cs/usr/eloyfer/.local/share/jupyter/runtime/nbserver-554258-open.html
+    Or copy and paste one of these URLs:
+        http://sed-01:8888/?token=3333f77b0002c59575030fb26c3ce939ea135cfb6286275f
+     or http://127.0.0.1:8888/?token=3333f77b0002c59575030fb26c3ce939ea135cfb6286275f
+[W 07:32:07.137 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 07:32:07.535 NotebookApp] Kernel started: 5d32e655-185f-4d29-8e4e-f6e47fe6262b, name: local-venv
+[IPKernelApp] WARNING | debugpy_stream undefined, debugging will not be enabled
+[W 07:32:12.015 NotebookApp] 404 GET /static/components/MathJax/fonts/HTML-CSS/TeX/otf/MathJax_AMS-Regular.otf (132.65.128.99) 409.690000ms referer=http://localhost:8081/notebooks/experiment_log.ipynb
+[W 07:32:12.060 NotebookApp] 404 GET /static/components/MathJax/fonts/HTML-CSS/TeX/otf/MathJax_Script-Regular.otf (132.65.128.99) 443.840000ms referer=http://localhost:8081/notebooks/experiment_log.ipynb
+[I 07:39:03.560 NotebookApp] New terminal with automatic name: 1

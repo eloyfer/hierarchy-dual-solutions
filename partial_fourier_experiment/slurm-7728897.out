@@ -1,0 +1,292 @@
+[W 13:38:46.454 NotebookApp] Error loading server extension jupyter_lsp
+    Traceback (most recent call last):
+      File "/cs/labs/nati/eloyfer/envs/py39/lib/python3.9/site-packages/notebook/notebookapp.py", line 2029, in init_server_extensions
+        func(self)
+      File "/cs/labs/nati/eloyfer/envs/py39/lib/python3.9/site-packages/jupyter_lsp/serverextension.py", line 76, in load_jupyter_server_extension
+        nbapp.io_loop.call_later(0, initialize, nbapp, virtual_documents_uri)
+    AttributeError: 'NotebookApp' object has no attribute 'io_loop'
+[W 2023-11-29 13:38:48.754 LabApp] 'ip' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-11-29 13:38:48.754 LabApp] 'ip' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-11-29 13:38:48.754 LabApp] 'allow_origin' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-11-29 13:38:48.754 LabApp] 'allow_origin' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[I 2023-11-29 13:38:48.772 LabApp] JupyterLab extension loaded from /cs/labs/nati/eloyfer/envs/py39/lib/python3.9/site-packages/jupyterlab
+[I 2023-11-29 13:38:48.772 LabApp] JupyterLab application directory is /cs/labs/nati/eloyfer/envs/py39/share/jupyter/lab
+[I 2023-11-29 13:38:48.773 LabApp] Extension Manager is 'pypi'.
+[I 13:38:48.785 NotebookApp] The port 8888 is already in use, trying another port.
+[I 13:38:48.785 NotebookApp] Serving notebooks from local directory: /cs/labs/nati/eloyfer/projects/hierarchy-dual-solutions/partial_fourier_experiment
+[I 13:38:48.785 NotebookApp] Jupyter Notebook 6.5.2 is running at:
+[I 13:38:48.785 NotebookApp] http://sed-01:8889/?token=b1d73ea5eeeeb20d022a21ce4ad2557bd7987d2400c6f4b1
+[I 13:38:48.785 NotebookApp]  or http://127.0.0.1:8889/?token=b1d73ea5eeeeb20d022a21ce4ad2557bd7987d2400c6f4b1
+[I 13:38:48.785 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 13:38:48.793 NotebookApp] 
+    
+    To access the notebook, open this file in a browser:
+        file:///cs/usr/eloyfer/.local/share/jupyter/runtime/nbserver-506727-open.html
+    Or copy and paste one of these URLs:
+        http://sed-01:8889/?token=b1d73ea5eeeeb20d022a21ce4ad2557bd7987d2400c6f4b1
+     or http://127.0.0.1:8889/?token=b1d73ea5eeeeb20d022a21ce4ad2557bd7987d2400c6f4b1
+[W 13:40:14.289 NotebookApp] 404 GET /api/kernels/71e5b309-5955-4adc-8fc1-055ceddac316/channels?session_id=aa07c451f64b4c96b948ea7ccf606262 (132.65.128.99): Kernel does not exist: 71e5b309-5955-4adc-8fc1-055ceddac316
+[W 13:40:14.820 NotebookApp] 404 GET /api/kernels/71e5b309-5955-4adc-8fc1-055ceddac316/channels?session_id=aa07c451f64b4c96b948ea7ccf606262 (132.65.128.99) 534.500000ms referer=None
+[W 13:41:19.015 NotebookApp] 404 GET /api/kernels/71e5b309-5955-4adc-8fc1-055ceddac316/channels?session_id=aa07c451f64b4c96b948ea7ccf606262 (132.65.128.99): Kernel does not exist: 71e5b309-5955-4adc-8fc1-055ceddac316
+[W 13:41:19.019 NotebookApp] 404 GET /api/kernels/71e5b309-5955-4adc-8fc1-055ceddac316/channels?session_id=aa07c451f64b4c96b948ea7ccf606262 (132.65.128.99) 5.420000ms referer=None
+[W 14:13:22.975 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 14:13:24.074 NotebookApp] Kernel started: 7fa04e5d-d726-4461-9262-1fbda947f61b, name: local-venv
+[W 14:13:26.840 NotebookApp] 404 GET /static/components/MathJax/fonts/HTML-CSS/TeX/otf/MathJax_AMS-Regular.otf (132.65.128.99) 3.260000ms referer=http://localhost:8081/notebooks/experiment_log.ipynb
+[W 14:13:26.841 NotebookApp] 404 GET /static/components/MathJax/fonts/HTML-CSS/TeX/otf/MathJax_Script-Regular.otf (132.65.128.99) 4.310000ms referer=http://localhost:8081/notebooks/experiment_log.ipynb
+[IPKernelApp] WARNING | debugpy_stream undefined, debugging will not be enabled
+[I 14:15:23.840 NotebookApp] Saving file at /experiment_log.ipynb
+[W 14:15:23.841 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 14:17:23.901 NotebookApp] Saving file at /experiment_log.ipynb
+[W 14:17:23.903 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 14:54:22.523 NotebookApp] Saving file at /experiment_log.ipynb
+[W 14:54:22.524 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 14:56:22.462 NotebookApp] Saving file at /experiment_log.ipynb
+[W 14:56:22.463 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 14:59:29.675 NotebookApp] Saving file at /experiment_log.ipynb
+[W 14:59:29.677 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 14:59:29.942 NotebookApp] Saving file at /experiment_log.ipynb
+[W 14:59:29.943 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 14:59:30.068 NotebookApp] Saving file at /experiment_log.ipynb
+[W 14:59:30.069 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 15:00:22.438 NotebookApp] Saving file at /experiment_log.ipynb
+[W 15:00:22.439 NotebookApp] Notebook experiment_log.ipynb is not trusted
+/cs/labs/nati/eloyfer/envs/py39/lib/python3.9/site-packages/nbformat/__init__.py:129: MissingIDFieldWarning: Code cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.
+  validate(nb)
+/cs/labs/nati/eloyfer/envs/py39/lib/python3.9/site-packages/notebook/services/contents/manager.py:353: MissingIDFieldWarning: Code cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.
+  validate_nb(model['content'])
+[I 15:02:22.443 NotebookApp] Saving file at /experiment_log.ipynb
+[W 15:02:22.445 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 15:04:22.463 NotebookApp] Saving file at /experiment_log.ipynb
+[W 15:04:22.464 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 15:06:22.463 NotebookApp] Saving file at /experiment_log.ipynb
+[W 15:06:22.464 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 15:08:22.450 NotebookApp] Saving file at /experiment_log.ipynb
+[W 15:08:22.452 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 15:10:22.449 NotebookApp] Saving file at /experiment_log.ipynb
+[W 15:10:22.450 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 15:12:22.456 NotebookApp] Saving file at /experiment_log.ipynb
+[W 15:12:22.457 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 15:14:22.471 NotebookApp] Saving file at /experiment_log.ipynb
+[W 15:14:22.472 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 15:16:22.472 NotebookApp] Saving file at /experiment_log.ipynb
+[W 15:16:22.473 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 15:18:22.476 NotebookApp] Saving file at /experiment_log.ipynb
+[W 15:18:22.477 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 15:22:22.497 NotebookApp] Saving file at /experiment_log.ipynb
+[W 15:22:22.498 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 15:57:30.117 NotebookApp] Saving file at /experiment_log.ipynb
+[W 15:57:30.119 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 15:59:30.082 NotebookApp] Saving file at /experiment_log.ipynb
+[W 15:59:30.084 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:01:30.081 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:01:30.083 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:03:30.088 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:03:30.089 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:05:30.118 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:05:30.119 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:07:30.096 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:07:30.098 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:09:30.098 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:09:30.100 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:11:30.100 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:11:30.102 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:13:30.100 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:13:30.101 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:15:30.101 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:15:30.102 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:29:30.108 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:29:30.110 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:31:30.102 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:31:30.103 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:33:30.093 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:33:30.095 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:35:30.101 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:35:30.102 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:35:59.924 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:35:59.925 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:36:00.489 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:36:00.490 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:36:00.591 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:36:00.592 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:37:23.040 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:37:23.041 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:39:30.106 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:39:30.108 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:41:30.109 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:41:30.110 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:42:22.983 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:42:22.984 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:42:23.393 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:42:23.394 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:42:23.490 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:42:23.491 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:42:49.185 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:42:49.186 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:42:49.371 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:42:49.372 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:42:49.531 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:42:49.532 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:43:30.104 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:43:30.105 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:43:54.377 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:43:54.377 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:43:54.605 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:43:54.606 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:43:54.781 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:43:54.781 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:43:57.609 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:43:57.609 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:43:57.811 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:43:57.812 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:43:58.337 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:43:58.338 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:44:25.697 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:44:25.698 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:44:25.941 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:44:25.942 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:44:26.021 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:44:26.022 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:45:22.694 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:45:22.695 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:45:22.922 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:45:22.923 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:45:23.108 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:45:23.109 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:45:46.960 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:45:46.961 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:45:47.149 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:45:47.149 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:45:47.364 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:45:47.365 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:47:30.109 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:47:30.110 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:53:30.151 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:53:30.152 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:55:30.114 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:55:30.116 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:57:30.128 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:57:30.129 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 16:59:30.148 NotebookApp] Saving file at /experiment_log.ipynb
+[W 16:59:30.150 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 17:03:30.141 NotebookApp] Saving file at /experiment_log.ipynb
+[W 17:03:30.142 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 17:04:43.346 NotebookApp] Saving file at /experiment_log.ipynb
+[W 17:04:43.347 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 17:04:43.582 NotebookApp] Saving file at /experiment_log.ipynb
+[W 17:04:43.583 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 17:05:30.146 NotebookApp] Saving file at /experiment_log.ipynb
+[W 17:05:30.147 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 17:07:30.146 NotebookApp] Saving file at /experiment_log.ipynb
+[W 17:07:30.147 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 17:09:30.179 NotebookApp] Saving file at /experiment_log.ipynb
+[W 17:09:30.181 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 17:13:42.492 NotebookApp] Saving file at /experiment_log.ipynb
+[W 17:13:42.493 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 17:15:42.510 NotebookApp] Saving file at /experiment_log.ipynb
+[W 17:15:42.511 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 17:21:42.513 NotebookApp] Saving file at /experiment_log.ipynb
+[W 17:21:42.514 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 17:33:48.761 NotebookApp] Saving file at /experiment_log.ipynb
+[W 17:33:48.763 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 17:35:48.767 NotebookApp] Saving file at /experiment_log.ipynb
+[W 17:35:48.768 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 17:37:48.775 NotebookApp] Saving file at /experiment_log.ipynb
+[W 17:37:48.777 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 17:37:51.387 NotebookApp] Saving file at /experiment_log.ipynb
+[W 17:37:51.388 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 17:37:51.617 NotebookApp] Saving file at /experiment_log.ipynb
+[W 17:37:51.618 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 17:37:51.808 NotebookApp] Saving file at /experiment_log.ipynb
+[W 17:37:51.809 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 17:38:03.579 NotebookApp] Saving file at /experiment_log.ipynb
+[W 17:38:03.579 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 17:38:03.825 NotebookApp] Saving file at /experiment_log.ipynb
+[W 17:38:03.826 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 17:38:04.078 NotebookApp] Saving file at /experiment_log.ipynb
+[W 17:38:04.079 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 17:38:04.444 NotebookApp] Saving file at /experiment_log.ipynb
+[W 17:38:04.445 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 17:39:48.776 NotebookApp] Saving file at /experiment_log.ipynb
+[W 17:39:48.778 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 17:41:48.775 NotebookApp] Saving file at /experiment_log.ipynb
+[W 17:41:48.777 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 17:43:48.805 NotebookApp] Saving file at /experiment_log.ipynb
+[W 17:43:48.807 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 17:44:14.219 NotebookApp] Saving file at /experiment_log.ipynb
+[W 17:44:14.220 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 17:44:14.475 NotebookApp] Saving file at /experiment_log.ipynb
+[W 17:44:14.475 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 17:44:14.619 NotebookApp] Saving file at /experiment_log.ipynb
+[W 17:44:14.620 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 17:51:48.803 NotebookApp] Saving file at /experiment_log.ipynb
+[W 17:51:48.805 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 17:53:48.766 NotebookApp] Saving file at /experiment_log.ipynb
+[W 17:53:48.767 NotebookApp] Notebook experiment_log.ipynb is not trusted
+[I 17:54:22.544 NotebookApp] Starting buffering for 7fa04e5d-d726-4461-9262-1fbda947f61b:9dc175cc801042ba8480e54e797260f9
+[I 17:54:23.012 NotebookApp] Kernel restarted: 7fa04e5d-d726-4461-9262-1fbda947f61b
+[I 17:54:23.084 NotebookApp] Restoring connection for 7fa04e5d-d726-4461-9262-1fbda947f61b:9dc175cc801042ba8480e54e797260f9
+[W 17:54:31.185 NotebookApp] Nudge: attempt 10 on kernel 7fa04e5d-d726-4461-9262-1fbda947f61b
+[IPKernelApp] WARNING | debugpy_stream undefined, debugging will not be enabled
+[I 17:54:31.686 NotebookApp] Replaying 3 buffered messages
+[I 17:55:48.748 NotebookApp] Saving file at /experiment_log.ipynb
+[I 17:57:48.832 NotebookApp] Saving file at /experiment_log.ipynb
+[I 17:59:48.761 NotebookApp] Saving file at /experiment_log.ipynb
+[I 17:59:49.586 NotebookApp] Starting buffering for 7fa04e5d-d726-4461-9262-1fbda947f61b:9dc175cc801042ba8480e54e797260f9
+[I 17:59:49.817 NotebookApp] Kernel restarted: 7fa04e5d-d726-4461-9262-1fbda947f61b
+[I 17:59:49.874 NotebookApp] Restoring connection for 7fa04e5d-d726-4461-9262-1fbda947f61b:9dc175cc801042ba8480e54e797260f9
+[IPKernelApp] WARNING | debugpy_stream undefined, debugging will not be enabled
+[I 17:59:51.880 NotebookApp] Replaying 3 buffered messages
+[I 18:01:48.755 NotebookApp] Saving file at /experiment_log.ipynb
+[I 18:03:48.771 NotebookApp] Saving file at /experiment_log.ipynb
+[I 18:04:12.776 NotebookApp] Starting buffering for 7fa04e5d-d726-4461-9262-1fbda947f61b:9dc175cc801042ba8480e54e797260f9
+[I 18:04:13.013 NotebookApp] Kernel restarted: 7fa04e5d-d726-4461-9262-1fbda947f61b
+[I 18:04:13.068 NotebookApp] Restoring connection for 7fa04e5d-d726-4461-9262-1fbda947f61b:9dc175cc801042ba8480e54e797260f9
+[IPKernelApp] WARNING | debugpy_stream undefined, debugging will not be enabled
+[I 18:04:15.074 NotebookApp] Replaying 3 buffered messages
+[I 18:05:48.754 NotebookApp] Saving file at /experiment_log.ipynb
+[I 18:07:48.792 NotebookApp] Saving file at /experiment_log.ipynb
+[I 18:09:33.235 NotebookApp] Starting buffering for 7fa04e5d-d726-4461-9262-1fbda947f61b:9dc175cc801042ba8480e54e797260f9
+[I 18:09:33.509 NotebookApp] Kernel restarted: 7fa04e5d-d726-4461-9262-1fbda947f61b
+[I 18:09:33.564 NotebookApp] Restoring connection for 7fa04e5d-d726-4461-9262-1fbda947f61b:9dc175cc801042ba8480e54e797260f9
+[IPKernelApp] WARNING | debugpy_stream undefined, debugging will not be enabled
+[I 18:09:35.571 NotebookApp] Replaying 3 buffered messages
+[I 18:09:48.741 NotebookApp] Saving file at /experiment_log.ipynb
+[I 18:18:50.388 NotebookApp] Starting buffering for 7fa04e5d-d726-4461-9262-1fbda947f61b:9dc175cc801042ba8480e54e797260f9
+[I 18:18:50.655 NotebookApp] Kernel restarted: 7fa04e5d-d726-4461-9262-1fbda947f61b
+[I 18:18:50.707 NotebookApp] Restoring connection for 7fa04e5d-d726-4461-9262-1fbda947f61b:9dc175cc801042ba8480e54e797260f9
+[IPKernelApp] WARNING | debugpy_stream undefined, debugging will not be enabled
+[I 18:18:52.213 NotebookApp] Replaying 3 buffered messages
+[I 18:19:39.670 NotebookApp] Starting buffering for 7fa04e5d-d726-4461-9262-1fbda947f61b:9dc175cc801042ba8480e54e797260f9
+[I 18:19:39.977 NotebookApp] Kernel restarted: 7fa04e5d-d726-4461-9262-1fbda947f61b
+[I 18:19:40.163 NotebookApp] Restoring connection for 7fa04e5d-d726-4461-9262-1fbda947f61b:9dc175cc801042ba8480e54e797260f9
+[IPKernelApp] WARNING | debugpy_stream undefined, debugging will not be enabled
+[I 18:19:41.670 NotebookApp] Replaying 3 buffered messages
+[I 18:19:48.751 NotebookApp] Saving file at /experiment_log.ipynb
+[I 18:20:07.152 NotebookApp] Starting buffering for 7fa04e5d-d726-4461-9262-1fbda947f61b:9dc175cc801042ba8480e54e797260f9
+[I 18:20:07.388 NotebookApp] Kernel restarted: 7fa04e5d-d726-4461-9262-1fbda947f61b
+[I 18:20:07.441 NotebookApp] Restoring connection for 7fa04e5d-d726-4461-9262-1fbda947f61b:9dc175cc801042ba8480e54e797260f9
+[IPKernelApp] WARNING | debugpy_stream undefined, debugging will not be enabled
+[I 18:20:08.947 NotebookApp] Replaying 3 buffered messages
+[I 18:21:48.773 NotebookApp] Saving file at /experiment_log.ipynb
+[I 18:22:19.969 NotebookApp] Saving file at /experiment_log.ipynb
+[I 18:22:20.172 NotebookApp] Saving file at /experiment_log.ipynb
+[I 18:22:20.409 NotebookApp] Saving file at /experiment_log.ipynb
+[I 18:22:41.124 NotebookApp] Saving file at /experiment_log.ipynb
+[I 18:23:32.967 NotebookApp] Saving file at /experiment_log.ipynb
+[I 18:23:48.741 NotebookApp] Saving file at /experiment_log.ipynb
+[I 18:25:48.768 NotebookApp] Saving file at /experiment_log.ipynb
+[I 18:27:48.768 NotebookApp] Saving file at /experiment_log.ipynb
+[I 18:29:48.765 NotebookApp] Saving file at /experiment_log.ipynb
+[I 18:30:14.010 NotebookApp] Saving file at /experiment_log.ipynb
+[I 18:31:48.797 NotebookApp] Saving file at /experiment_log.ipynb
+[I 18:32:14.286 NotebookApp] Saving file at /experiment_log.ipynb
+[I 18:33:48.778 NotebookApp] Saving file at /experiment_log.ipynb
+[W 18:41:07.472 NotebookApp] WebSocket ping timeout after 119915 ms.
+[I 18:41:12.481 NotebookApp] Starting buffering for 7fa04e5d-d726-4461-9262-1fbda947f61b:9dc175cc801042ba8480e54e797260f9
+[I 18:50:08.139 NotebookApp] Restoring connection for 7fa04e5d-d726-4461-9262-1fbda947f61b:9dc175cc801042ba8480e54e797260f9
+[W 18:52:38.169 NotebookApp] WebSocket ping timeout after 119925 ms.
+[I 18:52:43.176 NotebookApp] Starting buffering for 7fa04e5d-d726-4461-9262-1fbda947f61b:9dc175cc801042ba8480e54e797260f9
+[I 19:01:28.313 NotebookApp] Restoring connection for 7fa04e5d-d726-4461-9262-1fbda947f61b:9dc175cc801042ba8480e54e797260f9
+[W 19:03:58.344 NotebookApp] WebSocket ping timeout after 119959 ms.
+[I 19:04:03.351 NotebookApp] Starting buffering for 7fa04e5d-d726-4461-9262-1fbda947f61b:9dc175cc801042ba8480e54e797260f9
+slurmstepd: error: *** JOB 7728897 ON sed-01 CANCELLED AT 2023-11-29T21:38:43 DUE TO TIME LIMIT ***
