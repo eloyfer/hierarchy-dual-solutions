@@ -40,6 +40,7 @@ class Krawtchouk:
     
     def init_symmetries(self):
         # !!!! this solution only works for ell <= 2 !!!!
+        assert self.ell <= 2
         self.config_to_orbit = {a: (a[0],) + tuple(sorted(a[1:])) for a in self.config_set}
         self.orbit_list = sorted(set(self.config_to_orbit.values()), key=lambda a: self.config_set.index(a))
         self.orbit_map = {}
