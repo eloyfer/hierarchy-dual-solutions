@@ -18,18 +18,20 @@ class DualSolExperiment:
         self.m_vals = m_vals
         self.sol_factory = SolutionFactory2(n,d)
         
-        self.init_level_solutions()
+        self.init_all_level_solutions()
         print(self.report_num_feasible())
         self.init_final_sols()
         print(self.report_best_sols())
         
-    def init_level_solutions(self):
+    def init_all_level_solutions(self):
         self.lvl_sols = {}
         for lvl in range(1, self.ell+1):
             self.lvl_sols[lvl] = []
             for m in self.m_vals[lvl]:
-#                 print('m=',m)
-                self.lvl_sols[lvl] += self.sol_factory.get_all_level_sols(lvl, m)
+                self.add_level_solutions(lvl, m)
+
+    def add_level_solutions(self, lvl, m):
+        self.lvl_sols[lvl] += self.sol_factory.get_all_level_sols(lvl, m)
     
     def report_num_feasible(self):
         dat = pd.DataFrame(
