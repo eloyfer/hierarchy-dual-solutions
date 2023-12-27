@@ -5,7 +5,7 @@ import itertools
 
 class LevelSol:
     
-    def __init__(self, lvl, n, d, m, configs, phi, kraw, valid_region):
+    def __init__(self, lvl, n, d, configs, phi, K=None):
         
         assert lvl == int(math.log2(len(configs[0])))
         assert n == sum(configs[0])
@@ -13,25 +13,28 @@ class LevelSol:
         self.lvl = lvl
         self.n = n
         self.d = d
-        self.m = m
         self.configs = configs
-
         self.phi = phi
-        self.kraw = kraw
-        self.valid_region = valid_region
-        
-        self.init_sol()
-        
-    def init_sol(self):
-        """
-        """
-        gamma_sqr = self.get_gamma_squared()
+
+        if K is None:
+            from krawtchouk_getter import get_krawtchouk
+            K = get_krawchouk(n, lvl)
+
+        self.init_sol(K)
+
+    def get_valid_region(self):
+        return self.phi.valid_region
+
+    def get_config_set(self):
+        return self.phi.config_set
+
+    def init_sol(self, K):
+        gamma_sqr = self.get_gamma_squared(K)
         raw_sol = [x * y for x,y in zip(self.phi, gamma_sqr)]
         self.raw_sol = raw_sol
         
-        
         # compute the Fourier transform by multiplying with the Krawtchouk matrix
-        func_fourier = self.kraw.matmul([[x] for x in raw_sol], transposed=True)
+        func_fourier = K.matmul([[x] for x in raw_sol], transposed=True)
 
         # flatten
         func_fourier = list(itertools.chain(*func_fourier))
@@ -42,7 +45,7 @@ class LevelSol:
         self.raw_sol_fourier = func_fourier
         
         # keep useful quantities
-        self.max_in_valid_region = max(self.raw_sol[self.kraw.config2index(a)] for a in self.valid_region)
+        self.max_in_valid_region = max(self.raw_sol[K.config2index(a)] for a in self.get_valid_region())
         self.min_fourier_val = min(func_fourier)
         
         # compute the actual solution
@@ -51,8 +54,8 @@ class LevelSol:
             self.sol = [Fraction(x, denom) - 1 for x in self.raw_sol]
         
     
-    def get_gamma_squared(self):
-        K_rows = [self.kraw.get_row(a) for a in self.configs]
+    def get_gamma_squared(self, K):
+        K_rows = [K.get_row(a) for a in self.configs]
         gamma_sqr = [(sum(col), len(col)) for col in zip(*K_rows)]
         assert all(x % y == 0 for x,y in gamma_sqr)
         gamma_sqr = [(x//y)**2 for x,y in gamma_sqr]
@@ -61,8 +64,8 @@ class LevelSol:
         # symmetrize
         
         gamma_sqr_on_robit = {
-            a0: (sum(gamma_sqr[self.kraw.config2index(a)] for a in orbit), len(orbit))
-            for a0, orbit in self.kraw.orbit_map.items()
+            a0: (sum(gamma_sqr[K.config2index(a)] for a in orbit), len(orbit))
+            for a0, orbit in K.orbit_map.items()
         }
         assert all(x % y == 0 for x,y in gamma_sqr_on_robit.values())
         gamma_sqr_on_robit = {
@@ -70,8 +73,8 @@ class LevelSol:
         }
         
         gamma_sqr = [
-            gamma_sqr_on_robit[self.kraw.config_to_orbit[a]] 
-            for a in self.kraw.config_set
+            gamma_sqr_on_robit[K.config_to_orbit[a]] 
+            for a in K.config_set
         ]
         
         return gamma_sqr

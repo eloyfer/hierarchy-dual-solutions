@@ -13,6 +13,7 @@ class TotalSol:
         self.max_lvl = max_lvl
         self.lambdas = {}
         self.lvl_sols = {}
+        self.data = []
     
     def get_copy(self):
         self_copy = TotalSol(self.n, self.max_lvl)
@@ -41,10 +42,10 @@ class TotalSol:
         if lvl == self.max_lvl:
             return 1
         else:
-            valid_region = self.lvl_sols[lvl].valid_region
+            valid_region = self.lvl_sols[lvl].get_valid_region()
 
             config_sets = {
-                j: self.lvl_sols[j].kraw.get_config_set()
+                j: self.lvl_sols[j].get_config_set()
                 for j in range(lvl, self.max_lvl+1)
             }
 
